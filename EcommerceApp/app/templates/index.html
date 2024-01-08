@@ -1,1 +1,133 @@
-<h1>Hello</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} HomePage {% endblock title %}
+
+{% block banner_slider %}
+{% include "partials/_banner.html" %}
+{% endblock banner_slider %}
+
+{% block info %}
+<div class="container">
+    <div class="row bg-success text-center p-5 text-white border-bottom shadow">
+        <h1>Products</h1>
+        <small class="fs-6">
+            {% lorem 1 b random %}
+        </small>
+    </div>
+</div>
+{% endblock info %}
+
+
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center"> Dairy Products </h2>
+    <br>
+
+    <div class="row container">
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk smbg">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center">
+                            <img class="img-responsive center-block" src="{% static 'img/product/buffalo-ghee.png'%}"
+                                alt="">
+                            <p class="mlkpro text-center">Ghee</p>
+                        </div>
+                    </a>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk curdbgpro">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center ">
+                            <img class="img-responsive center-block" src="{% static 'img/product/buffalo-ghee.png'%}"
+                                alt="">
+                            <p class="mlkpro">Ghee</p>
+                        </div>
+                    </a>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk buttermilk">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center">
+                            <img class="img-responsive center-block" src="{% static 'img/product/buffalo-ghee.png'%}"
+                                alt="">
+                            <p class="mlkpro">Kulfi</p>
+                        </div>
+                    </a>
+            </div>
+
+        </div>
+    </div>
+    <br>
+
+    <div class="row container">
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk smbg">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center">
+                            <img class="img-responsive center-block"
+                                src="{% static 'img/product/milk-shake-chocolate.png'%}" alt="">
+                            <p class="mlkpro text-center">Ghee</p>
+                        </div>
+                    </a>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk curdbgpro">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center ">
+                            <img class="img-responsive center-block"
+                                src="{% static 'img/product/milk-shake-chocolate.png'%}" alt="">
+                            <p class="mlkpro">Ghee</p>
+                        </div>
+                    </a>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+            style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+
+            <div class="prod buttermilk buttermilk">
+                {% comment %} <a href="{% url 'category' 'ML'%}"> {% endcomment %}
+                    <a href="#">
+                        <div class="item-prod text-center">
+                            <img class="img-responsive center-block"
+                                src="{% static 'img/product/milk-shake-chocolate.png'%}" alt="">
+                            <p class="mlkpro">Kulfi</p>
+                        </div>
+                    </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<br />
+
+
+{% endblock content %}
