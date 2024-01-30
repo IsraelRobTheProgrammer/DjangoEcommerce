@@ -206,7 +206,22 @@ h6 {
 /* ==========================================================================
    #BUTTON
    ========================================================================== */
-.btn {
+
+.btn{
+    /* line-height: 40px; */
+    display: inline-block;
+    /* padding: 0 25px; */
+    cursor: pointer;
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    /* color: black; */
+    transition: all 0.4s ease;
+    font-size: 14px;
+    font-weight: 700;
+}
+.btn--form {
   line-height: 40px;
   display: inline-block;
   padding: 0 25px;
@@ -452,7 +467,7 @@ input {
 /* ==========================================================================
    #CARD
    ========================================================================== */
-.card {
+.card-form {
   overflow: hidden;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -477,7 +492,7 @@ input {
   display: table-cell;
 }
 
-.card-2 .card-body {
+.card-2 .card-body-2 {
   display: table-cell;
   padding: 80px 90px;
   padding-bottom: 88px;
@@ -493,7 +508,7 @@ input {
     padding-top: 300px;
     background-position: left center;
   }
-  .card-2 .card-body {
+  .card-2 .card-body-2 {
     display: block;
     padding: 60px 50px;
   }

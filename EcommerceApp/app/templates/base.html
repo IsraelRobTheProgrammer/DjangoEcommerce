@@ -45,6 +45,17 @@
         message.style.display = "none";
       }, 5000);
     }
+
+
+    var form_errors = document.querySelectorAll(".form-errors");
+    if (form_errors) {
+      form_errors.forEach((error) => {
+        setTimeout(function () {
+          error.outerText = ""
+        }, 5000);
+      })
+
+    }
   </script>
 </body>
 

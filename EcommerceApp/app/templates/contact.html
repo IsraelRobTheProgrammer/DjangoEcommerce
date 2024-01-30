@@ -13,8 +13,8 @@
 <div class="page-wrapper p-t-180 p-b-100 font-robo">
 	<div class="wrapper wrapper--w960">
 		{% include 'partials/_messages.html'%}
-		<div class="card card-2">
-			<div class="card-body">
+		<div class="card-form card-2">
+			<div class="card-body-2">
 				<h2 class="title">Send Us A Message</h2>
 				<form action="{% url 'contact' %}" method="POST">
 					{% csrf_token %}
@@ -53,7 +53,7 @@
 						</div>
 					</div>
 					<div class="p-t-30">
-						<button class="btn btn--radius btn-success" type="submit">Send</button>
+						<button class="btn--form btn--radius bg-success" type="submit">Send</button>
 					</div>
 				</form>
 			</div>
