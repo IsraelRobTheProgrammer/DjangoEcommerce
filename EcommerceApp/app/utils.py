@@ -45,3 +45,13 @@ STATE_CHOICES = (
     ("Zamafara", "Zamafara"),
     ("FCT", "FCT"),
 )
+
+
+STATUS_CHOICES = (
+    ("Accepted", "Accepted"),
+    ("Packed", "Packed"),
+    ("On The Way", "On The Way"),
+    ("Delivered", "Delivered"),
+    ("Cancel", "Cancel"),
+    ("Pending", "Pending"),
+)

@@ -9,11 +9,27 @@ from .forms import LoginForm, PswdChangeForm, PswdResetForm, SetPswdForm
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("search", views.search, name="search"),
     path("about", views.about, name="about"),
     path("contact", views.contact, name="contact"),
     path("category/<slug:value>", views.category_view, name="category"),
     path("category-title/<str:value>", views.category_title, name="category_title"),
     path("product-detail/<int:id>", views.product_detail, name="product-detail"),
+    path("add-to-cart", views.add_to_cart, name="add_to_cart"),
+    path("cart", views.show_cart, name="show_cart"),
+    path("checkout", views.checkout_view, name="checkout"),
+    path("wishlist", views.wishlist, name="wishlist"),
+    path("pluscart", views.plus_cart),
+    path("pluswishlist", views.plus_wishlist),
+    
+    path("minuswishlist", views.minus_wishlist),
+    path("minuscart", views.minus_cart),
+    
+    path("removeitem", views.remove_item),
+
+    path("confirm_payment/<int:custid>", views.confirm_payment, name="confirm_payment"),
+    path("orders", views.orders, name="orders"),
+
     # USERS AND AUTH SECTION
     path("registration", views.customer_reg_view, name="customer_reg"),
     path("profile", views.profile_view, name="profile"),

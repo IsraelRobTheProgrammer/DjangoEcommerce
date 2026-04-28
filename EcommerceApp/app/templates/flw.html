@@ -1,0 +1,33 @@
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<button type="button" id="start-payment-button" onclick="makePayment()">
+    Pay Now
+</button>
+
+<script>
+  function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "FLWPUBK_TEST-93514dfc77308dc1dacb299a0e94cdc1-X",
+      tx_ref: "txref-DI0NzMx12",
+      amount: 2500,
+      currency: "NGN",
+      redirect_url:
+        "http://127.0.0.1:8000/confirm_payment?cust_id=${form.elements['custid'].value}",
+      payment_options: "card, banktransfer, ussd",
+      meta: {
+        source: "docs-inline-test",
+        consumer_mac: "92a3-912ba-1192a",
+      },
+      customer: {
+        email: "test@mailinator.com",
+        phone_number: "08100000000",
+        name: "Ayomide Jimi-Oni",
+      },
+      customizations: {
+        title: "Flutterwave Developers",
+        description: "Test Payment",
+        logo: "https://checkout.flutterwave.com/assets/img/rave-logo.png",
+      },
+    });
+  }
+</script>
+

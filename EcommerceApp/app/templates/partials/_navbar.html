@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="{% static "img/product/neel.png" %}" width="60" height="60" />
+      <img src="{% static "img/product/Neel.png" %}" width="60" height="60" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,23 +27,25 @@
             <li>
               <a class="dropdown-item" href="{% url "category" "LS" %}">Lassi</a>
             </li>
-
-            <a class="dropdown-item" href="{% url "category" "IC" %}">Ice-Cream</a>
+   <li>
+              <a class="dropdown-item" href="{% url "category" "MS" %}">MilkShake</a>
+            </li>
+            <li><a class="dropdown-item" href="{% url "category" "IC" %}">Ice-Cream</a>
         </li>
 
       </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "about" %}">About Us</a>
+        <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "contact" %}">Contact Us</a>
+        <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
       </li>
 
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <form class="d-flex" role="search" action="/search">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-success" type="submit">
           Search
         </button>
@@ -69,7 +71,7 @@
           </li>
 
           <li>
-            <a href="{% url 'profile' %}" class="dropdown-item">Orders</a>
+            <a href="{% url 'orders' %}" class="dropdown-item">Orders</a>
           </li>
 
           <li>
@@ -82,11 +84,11 @@
 
       {% if request.user.is_authenticated %}
       <li class="nav-item mx-2">
-        <a href="" class="nav-link text-white"> Cart Item </a>
+        <a href="{% url "show_cart" %}" class="nav-link text-white"> Cart </a>
       </li>
       
       <li class="nav-item mx-2">
-        <a href="" class="nav-link text-white"> Wishlist Item </a>
+        <a href="{% url 'wishlist' %}" class="nav-link text-white"> Wishlist </a>
       </li>
       {% endif %}
 
@@ -94,7 +96,11 @@
       {% if request.user.is_authenticated %}
 
       <li class="nav-item mx-2">
-        <a href="{% url 'customer_logout' %}" class="nav-link text-white"> LogOut </a>
+        {% comment %} <form action=""></form> {% endcomment %}
+        <form action="{% url 'customer_logout' %}" method="POST"> 
+          {% csrf_token %}
+          <button type="submit" class="nav-link text-white">Logout</button>  
+        </form>
       </li>
       
       {% else %}

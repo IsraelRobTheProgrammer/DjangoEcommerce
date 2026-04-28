@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Your WishList
+{% endblock %}
+
+{% block content %}
+  <div class="container my-5">
+    {% include 'partials/_messages.html' %}
+
+    {% if wishlist_items %}
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="row">
+            {% for item in wishlist_items %}
+              <div class="col-sm-4 text-center mb-4 hover-shadow">
+                <a href="{% url 'product-detail' item.product.id %}" class="btn">
+                  <div>
+                    <img src="{{ item.product.product_image.url }}" alt="Product Image" width="300px" height="200px" />
+                    <div class="fw-bold">{{ item.product.title }}</div>
+                    <div class="fw-bold text-danger">
+                      NGN {{ item.product.discounted_price }}
+                      <small class="fw-light text-decoration-line-through">{{ item.product.selling_price }}</small>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <h1 class="text-center mb-5">No Items in your wishlist, Browse Through Our Product Categories 😊{% comment %} <a href="{% url 'home' %}" class="btn btn-primary">Shop</a> {% endcomment %}</h1>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -8,6 +8,8 @@ from django.contrib.auth.forms import (
     SetPasswordForm,
 )
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
+
 from .models import Customer
 
 
@@ -103,6 +105,18 @@ class SetPswdForm(SetPasswordForm):
 
 
 class CustomerProfileForm(forms.ModelForm):
+    phone_validator = RegexValidator(
+        regex=r"^(\+234|0)[789][01]\d{8}$",
+        message="Enter a valid Nigerian phone number (e.g., 08031234567 or +2348031234567).",
+    )
+
+    mobile = forms.CharField(
+        validators=[phone_validator],
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "0803..."}
+        ),
+    )
+
     class Meta:
         model = Customer
         fields = ["name", "locality", "city", "mobile", "state", "zipcode"]
@@ -111,7 +125,6 @@ class CustomerProfileForm(forms.ModelForm):
             "name": forms.TextInput(attrs={"class": "form-control"}),
             "locality": forms.TextInput(attrs={"class": "form-control"}),
             "city": forms.TextInput(attrs={"class": "form-control"}),
-            "mobile": forms.NumberInput(attrs={"class": "form-control"}),
             "state": forms.Select(attrs={"class": "form-control"}),
             "zipcode": forms.NumberInput(attrs={"class": "form-control"}),
         }

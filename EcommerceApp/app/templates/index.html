@@ -3,7 +3,6 @@
 
 {% block title %} HomePage {% endblock title %}
 
-{% include 'partials/_messages.html'%}
 
 {% block banner_slider %}
 {% include "partials/_banner.html" %}
@@ -25,7 +24,8 @@
 {% block content %}
 <div class="container">
     <h2 class="text-center"> Dairy Products </h2>
-    <br>
+    <br> {% include 'partials/_messages.html'%}
+     
 
     <div class="row container">
         <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
